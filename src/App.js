@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import store from './store'
-import {Provider} from 'react-redux'
+import { Provider } from 'react-redux'
 import { Route } from 'react-router-dom'
-import Home from './components/Home'
-import EventsList from './components/EventsList'
+import EventFormContainer from './components/EventFormContainer'
 import EventsListContainer from './components/EventsListContainer'
 
 class App extends Component {
@@ -11,7 +10,12 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div>
-          <Route path="/" exact component={EventsListContainer} />
+          <div>
+            <Route path="/" exact component={EventsListContainer} />
+          </div>
+          <div>
+            <Route path="/" exact component={EventFormContainer} />
+          </div>
           {/* <Route path="/events/:id" component={EventsList} /> */}
         </div>
       </Provider>
