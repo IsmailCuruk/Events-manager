@@ -12,9 +12,8 @@ const eventCreateSuccess = event => ({
 export const createEvent = (data) => dispatch => {
   request
     .post(`${baseUrl}/events`)
-    .send(data)
+    .send(data) //where does data come from: from the parameter
     .then(response => {
-      console.log("YYYYOOOOOOOO",response.body)
       dispatch(eventCreateSuccess(response.body))
     })
     .catch(console.error)
