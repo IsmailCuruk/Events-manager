@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { loadEvent, updateEvent } from '../actions/event'
+import { loadEvent } from '../actions/event'
 import { deleteEvent } from '../actions/deleteEvent'
+import { updateEvent } from '../actions/updateEvent'
 
 
 class EventDetails extends React.Component {
@@ -31,6 +32,11 @@ class EventDetails extends React.Component {
             Delete
           </button>
         </div>
+        <div>
+          <button onClick={this.props.onEdit}>
+            Edit
+          </button>
+        </div>
       </div>
     )
   }
@@ -40,4 +46,4 @@ const mapStateToProps = state => ({
   event: state.event
 })
 
-export default connect(mapStateToProps, { loadEvent, deleteEvent })(EventDetails)
+export default connect(mapStateToProps, { loadEvent, deleteEvent, updateEvent })(EventDetails)

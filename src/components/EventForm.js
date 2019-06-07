@@ -6,7 +6,7 @@ import { createEvent } from '../actions/createEvent'
 
 class EventForm extends React.Component {
   render() {
-    console.log("Props test", this.props)
+    console.log("EventForm Props test", this.props)
     return (
       <form onSubmit={this.props.onSubmit}>
         <label>
